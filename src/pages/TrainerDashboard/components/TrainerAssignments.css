@@ -1,0 +1,138 @@
+.trainer-assignments-container {
+  padding: 1.5rem 0;
+}
+
+.assignments-stats-row {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.mini-stat-card {
+  flex: 1;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.mini-stat-card .lbl {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.mini-stat-card .val {
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.submissions-section {
+  padding: 1.75rem;
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.search-box-mini {
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  border-radius: 100px;
+}
+
+.search-box-mini input {
+  background: none;
+  border: none;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  outline: none;
+  width: 180px;
+}
+
+.submission-item {
+  display: grid;
+  grid-template-columns: 44px 1fr 150px 100px 100px;
+  align-items: center;
+  padding: 1.25rem;
+  border-radius: 12px;
+  transition: background 0.2s ease;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.submission-item:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.sub-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: rgba(129, 140, 248, 0.1);
+  color: #818cf8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sub-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.sub-title {
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.sub-meta {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.sub-status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.sub-status.pending { color: #f59e0b; }
+.sub-status.reviewing { color: #38bdf8; }
+
+.sub-time {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.btn-text-full {
+  width: 100%;
+  padding: 0.75rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: none;
+  color: var(--text-secondary);
+  font-weight: 700;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-text-full:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-primary);
+}
+
+@media (max-width: 992px) {
+  .submission-item {
+    grid-template-columns: 44px 1fr 120px;
+  }
+  .sub-time, .submission-item .btn-primary {
+    display: none;
+  }
+}

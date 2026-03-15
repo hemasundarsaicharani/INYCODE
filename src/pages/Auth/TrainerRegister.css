@@ -1,0 +1,23 @@
+/* Pointing to shared base styles */
+.form-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.auth-btn-group {
+    display: grid;
+    grid-template-columns: 0.4fr 1.6fr;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+@media (max-width: 640px) {
+    .form-grid-2 {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    .auth-btn-group {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,80 @@
+.brand-logo-container {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+}
+
+.brand-logo-container.sidebar {
+  padding: 0.5rem 0;
+}
+
+.brand-logo-img-wrap {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.brand-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.brand-logo-text-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.brand-logo-title {
+  font-family: 'Revue', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, #38bdf8, #818cf8, #22d3ee);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 3s linear infinite;
+}
+
+.brand-logo-tagline {
+  font-family: 'Copperplate Gothic Bold', 'Copperplate', serif;
+  font-size: 0.6rem;
+  font-weight: 600;
+  color: #94a3b8;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-top: -2px;
+}
+
+body.light .brand-logo-tagline {
+  color: #64748b;
+}
+
+/* Sidebar Specific Styles */
+.brand-logo-container.sidebar .brand-logo-img-wrap {
+  width: 48px;
+  height: 48px;
+}
+
+.brand-logo-container.sidebar .brand-logo-title {
+  font-size: 1.6rem;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .brand-logo-container.sidebar .brand-logo-img-wrap {
+    width: 38px;
+    height: 38px;
+  }
+  .brand-logo-container.sidebar .brand-logo-title {
+    font-size: 1.3rem;
+  }
+}

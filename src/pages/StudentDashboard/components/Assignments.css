@@ -1,0 +1,118 @@
+.db-assignments-modern {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.db-filter-bar {
+    padding: 0.75rem 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search-wrap {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: #94a3b8;
+}
+
+.search-wrap input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 0.95rem;
+}
+
+.assignments-table-wrap {
+    overflow-x: auto;
+}
+
+.db-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.db-table th {
+    padding: 0.75rem 1.25rem;
+    color: #64748b;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+.db-table td {
+    padding: 0.75rem 1.25rem;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.05);
+}
+
+.td-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.td-icon-circ {
+    width: 40px;
+    height: 40px;
+    background: rgba(56, 189, 248, 0.1);
+    color: #38bdf8;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.td-info .title {
+    font-weight: 700;
+    color: white;
+    margin-bottom: 0.1rem;
+}
+
+body.light .td-info .title {
+    color: #111827;
+}
+
+.td-info .subtitle {
+    font-size: 0.75rem;
+    color: #64748b;
+}
+
+body.light .td-info .subtitle,
+body.light .due-date {
+    color: #4b5563;
+}
+
+.course-badge {
+    padding: 0.35rem 0.85rem;
+    background: rgba(148, 163, 184, 0.05);
+    border-radius: 99px;
+    font-size: 0.8rem;
+    color: #94a3b8;
+    font-weight: 600;
+}
+
+.due-date {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #94a3b8;
+}
+
+.status-pill {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 0.85rem;
+    border-radius: 99px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    width: fit-content;
+}
+
+.status-pill.pending { background: rgba(245, 158, 11, 0.1); color: #f59e0b; }
+.status-pill.submitted { background: rgba(16, 185, 129, 0.1); color: #10b981; }

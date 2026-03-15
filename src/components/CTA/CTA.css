@@ -1,0 +1,95 @@
+.cta-section {
+    padding: 3rem 1.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-card {
+    background: linear-gradient(135deg, #0ea5e9 0%, #6366f1 100%);
+    border-radius: 2rem;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgba(14, 165, 233, 0.4);
+}
+
+.cta-shapes {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.cta-shape {
+    position: absolute;
+    background: white;
+    opacity: 0.1;
+    filter: blur(40px);
+    border-radius: 9999px;
+}
+
+.shape-1 {
+    width: 300px;
+    height: 300px;
+    top: -150px;
+    left: -100px;
+}
+
+.shape-2 {
+    width: 250px;
+    height: 250px;
+    bottom: -100px;
+    right: -50px;
+}
+
+.cta-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.cta-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    line-height: 1.1;
+    color: white;
+    margin-bottom: 1.5rem;
+}
+
+.cta-description {
+    font-size: 1.15rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.cta-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+    .cta-section {
+        padding: 2rem 1rem;
+    }
+
+    .cta-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .cta-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .cta-actions>* {
+        width: 100%;
+        justify-content: center;
+    }
+}

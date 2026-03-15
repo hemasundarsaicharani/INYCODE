@@ -1,0 +1,81 @@
+.admin-trainers-container {
+  padding: 1rem 0;
+}
+
+.trainers-grid-premium {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.trainer-card-pro {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.t-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.t-avatar-large {
+  width: 50px;
+  height: 50px;
+  border-radius: 15px;
+  background: rgba(129, 140, 248, 0.1);
+  color: #818cf8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.t-status-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.75rem;
+  border-radius: 100px;
+}
+
+.t-status-badge[data-status="active"] { background: rgba(16, 185, 129, 0.1); color: #10b981; }
+.t-status-badge[data-status="on-leave"] { background: rgba(245, 158, 11, 0.1); color: #f59e0b; }
+
+.trainer-card-pro h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.expertise-text {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+.t-meta-row {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.t-meta-row .item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.t-contact-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.t-card-footer {
+  margin-top: auto;
+  display: flex;
+  gap: 0.75rem;
+}

@@ -1,0 +1,159 @@
+.trainers-page {
+    padding: 2rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.trainers-bg-decor {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.trainers-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 1.5rem;
+}
+
+.trainers-grid-modern {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.trainer-card-modern {
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.trainer-img-wrap {
+    height: 240px;
+    position: relative;
+    overflow: hidden;
+}
+
+.trainer-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.trainer-card-modern:hover .trainer-img-wrap img {
+    transform: scale(1.1);
+}
+
+.trainer-socials-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.4);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.trainer-card-modern:hover .trainer-socials-overlay {
+    opacity: 1;
+}
+
+.trainer-social-btn {
+    width: 44px;
+    height: 44px;
+    background: white;
+    color: #0f172a;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.trainer-social-btn:hover {
+    transform: translateY(-5px);
+    background: #38bdf8;
+    color: white;
+}
+
+.trainer-info-modern {
+    padding: 1rem 1.25rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.trainer-name-modern {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+body.light .trainer-name-modern {
+    color: #0f172a;
+}
+
+.trainer-role-modern {
+    color: #38bdf8;
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 0.625rem;
+}
+
+.trainer-bio-modern {
+    color: #94a3b8;
+    line-height: 1.6;
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    flex: 1;
+}
+
+body.light .trainer-bio-modern {
+    color: #475569;
+}
+
+.trainer-skills-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.625rem;
+}
+
+.skill-chip {
+    padding: 0.35rem 1rem;
+    background: rgba(148, 163, 184, 0.1);
+    color: #cbd5e1;
+    border-radius: 9999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+body.light .skill-chip {
+    background: #f1f5f9;
+    color: #475569;
+}
+
+.trainer-profile-btn {
+    width: 100%;
+    justify-content: center;
+    font-size: 0.9rem;
+    padding: 0.75rem;
+}
+
+@media (max-width: 768px) {
+    .trainers-page {
+        padding: 1.5rem 1rem;
+    }
+}

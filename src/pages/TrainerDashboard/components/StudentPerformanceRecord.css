@@ -1,0 +1,164 @@
+.performance-container {
+  padding: 1.5rem 0;
+}
+
+.header-actions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  width: 300px;
+}
+
+.search-box input {
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  width: 100%;
+  outline: none;
+  font-size: 0.9rem;
+}
+
+.performance-stats-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.mini-stat-card {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.mini-stat-card .lbl {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.mini-stat-card .val {
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.performance-table-wrap {
+  overflow-x: auto;
+  border-radius: 16px;
+}
+
+.performance-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.performance-table th {
+  padding: 1.5rem;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-secondary);
+  background: rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.performance-table td {
+  padding: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  font-size: 0.95rem;
+}
+
+.performance-table tr:last-child td {
+  border-bottom: none;
+}
+
+.student-profile-cell {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.mini-avatar-rect {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: rgba(56, 189, 248, 0.1);
+  color: #38bdf8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.batch-tag {
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.2rem 0.6rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 6px;
+  color: var(--text-secondary);
+}
+
+.progress-cell {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.p-bar-mini {
+  width: 60px;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 100px;
+  overflow: hidden;
+}
+
+.p-bar-mini .p-bar-fill {
+  height: 100%;
+  border-radius: 100px;
+}
+
+.score-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 100px;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.trend-up {
+  color: #10b981;
+}
+
+.trend-down {
+  color: #f43f5e;
+}
+
+.action-btns {
+  display: flex;
+  gap: 0.5rem;
+}
+
+@media (max-width: 1024px) {
+  .search-box {
+    width: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-actions {
+    width: 100%;
+    margin-top: 1rem;
+  }
+  
+  .search-box {
+    flex: 1;
+  }
+}

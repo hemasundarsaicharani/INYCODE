@@ -1,0 +1,148 @@
+.home{
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* HERO SECTION */
+
+.hero{
+  background: transparent;
+  color: var(--text-primary);
+  padding:120px 20px;
+  text-align:center;
+}
+
+.hero h1{
+  font-size:48px;
+  margin-bottom:20px;
+}
+
+.hero p{
+  font-size:18px;
+  max-width:700px;
+  margin:auto;
+}
+
+.hero-buttons{
+  margin-top:30px;
+}
+
+.primary-btn{
+  background:var(--primary-color);
+  color:#0b1120;
+  border:none;
+  padding:12px 25px;
+  font-size:16px;
+  margin:10px;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+.secondary-btn{
+  background:transparent;
+  color:var(--text-primary);
+  border:2px solid var(--primary-color);
+  padding:12px 25px;
+  font-size:16px;
+  margin:10px;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+
+/* COURSES */
+
+.courses-section{
+  padding:40px 40px;
+  text-align:center;
+  background:transparent;
+}
+
+.courses-section h2{
+  font-size:32px;
+  margin-bottom:40px;
+}
+
+.courses-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+}
+
+.course-card{
+  background:var(--card-bg);
+  padding:30px;
+  border-radius:var(--radius-lg);
+  box-shadow:var(--shadow-md);
+}
+
+.course-card h3{
+  color:var(--primary-color);
+  margin-bottom:10px;
+}
+
+
+/* TRAINERS */
+
+.trainers-section{
+  padding:40px 40px;
+  text-align:center;
+}
+
+.trainers-section h2{
+  font-size:32px;
+  margin-bottom:40px;
+}
+
+.trainer-grid{
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  flex-wrap:wrap;
+}
+
+.trainer-card{
+  background:var(--card-bg);
+  padding:25px;
+  width:220px;
+  border-radius:8px;
+}
+
+.trainer-card h3{
+  color:var(--primary-color);
+}
+
+
+/* CAREER SUPPORT */
+
+.career-section{
+  padding:80px 40px;
+  background:transparent;
+  text-align:center;
+}
+
+.career-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+  margin-top:40px;
+}
+
+.career-card{
+  background:var(--card-bg);
+  padding:30px;
+  border-radius:var(--radius-lg);
+}
+
+
+/* CTA */
+
+.cta{
+  background: radial-gradient(circle at top, rgba(56,189,248,0.22), transparent 55%);
+  color:var(--text-primary);
+  text-align:center;
+  padding:70px 20px;
+}
+
+.cta h2{
+  margin-bottom:20px;
+}

@@ -1,0 +1,152 @@
+.methodology-page {
+    padding: 4rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.methodology-decor {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.methodology-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 2.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.methodology-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+    position: relative;
+    z-index: 1;
+}
+
+.methodology-card {
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+}
+
+.methodlogy-icon-wrap {
+    width: 64px;
+    height: 64px;
+    border-radius: 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid;
+    margin-bottom: 1rem;
+}
+
+.methodology-card-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1.25rem;
+}
+
+body.light .methodology-card-title {
+    color: #0f172a;
+}
+
+.methodology-card-text {
+    color: #94a3b8;
+    line-height: 1.7;
+    font-size: 1.05rem;
+    margin-bottom: 2rem;
+}
+
+body.light .methodology-card-text {
+    color: #4b5563;
+}
+
+.methodology-step {
+    position: absolute;
+    top: 2rem;
+    right: 2.5rem;
+    font-size: 0.9rem;
+    font-weight: 800;
+    color: rgba(56, 189, 248, 0.4);
+    letter-spacing: 0.1em;
+    font-family: 'Outfit', sans-serif;
+}
+
+.methodology-cta {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    padding: 2rem;
+    border-radius: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.cta-icon-group {
+    flex-shrink: 0;
+    width: 80px;
+    height: 80px;
+    background: rgba(14, 165, 233, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.zap-icon {
+    color: #0ea5e9;
+    filter: drop-shadow(0 0 10px rgba(14, 165, 233, 0.5));
+}
+
+.cta-h {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+body.light .cta-h {
+    color: #0f172a;
+}
+
+.cta-p {
+    color: #94a3b8;
+    margin-bottom: 0;
+}
+
+body.light .cta-p {
+    color: #4b5563;
+}
+
+@media (max-width: 1024px) {
+    .methodology-cta {
+        flex-direction: column;
+        text-align: center;
+        padding: 2.5rem;
+    }
+    
+    .methodology-cta .btn-primary {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .methodology-page {
+        padding: 3rem 1rem;
+    }
+    
+    .methodology-header {
+        margin-bottom: 3.5rem;
+    }
+}

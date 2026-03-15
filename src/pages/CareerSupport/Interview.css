@@ -1,0 +1,129 @@
+.interview-page-modern {
+    padding: 2rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.int-decor {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.int-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 1.5rem;
+}
+
+.int-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.int-card {
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.int-icon-box {
+    width: 52px;
+    height: 52px;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.75rem;
+}
+
+.int-card-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 0.625rem;
+}
+
+body.light .int-card-title {
+    color: #0f172a;
+}
+
+.int-card-text {
+    color: #94a3b8;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    flex: 1;
+}
+
+body.light .int-card-text {
+    color: #475569;
+}
+
+.int-card-footer {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    color: #64748b;
+    font-weight: 600;
+}
+
+.int-faq-incentive {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 1.25rem 2rem;
+    border-radius: 1.5rem;
+}
+
+.faq-icon-wrap {
+    flex-shrink: 0;
+}
+
+.faq-text-content {
+    flex: 1;
+}
+
+.faq-text-content h4 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+body.light .faq-text-content h4 {
+    color: #0f172a;
+}
+
+.faq-text-content p {
+    color: #94a3b8;
+    margin-bottom: 0;
+}
+
+@media (max-width: 1024px) {
+    .int-faq-incentive {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.25rem;
+    }
+    .int-faq-incentive button {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .interview-page-modern {
+        padding: 2rem 1rem;
+    }
+    .int-grid {
+        grid-template-columns: 1fr;
+    }
+}
