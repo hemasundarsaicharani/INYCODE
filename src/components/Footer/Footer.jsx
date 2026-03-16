@@ -112,7 +112,7 @@ const Footer = () => {
 
                 <div className="footer-bottom">
                     <p className="copyright">
-                        © 2025 INFYCODE. All rights reserved. Designed by Charani.
+                        © 2025 INFYCODE. All rights reserved. Designed by Charani Infotech Pvt. Ltd.
                     </p>
                     <div className="footer-legal">
                         <Link to="/privacy">Privacy Policy</Link>
