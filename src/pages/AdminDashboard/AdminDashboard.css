@@ -4,8 +4,17 @@
 .logo-text {
     font-family: 'Revue', sans-serif;
     font-size: 1.5rem;
-    font-weight: 800;
+    font-weight: 900;
     letter-spacing: 0.1em;
+}
+
+.db-page-header h1 {
+    font-weight: 800;
+}
+
+.section-header h2 {
+    font-weight: 800;
+    letter-spacing: -0.01em;
 }
 
 .health-grid {
@@ -26,7 +35,20 @@
 
 .health-value {
     color: #10b981;
+    font-weight: 800;
+}
+
+.stat-label {
     font-weight: 700;
+    color: #94a3b8;
+}
+
+body.light .stat-label {
+    color: #475569;
+}
+
+.stat-value {
+    font-weight: 800;
 }
 
 .alert-item {
@@ -189,4 +211,22 @@ body.light .alert-item h4 {
     .activity-list.horizontal {
         grid-template-columns: 1fr;
     }
+
+/* ── Opaque Dropdowns ── */
+.topbar-dropdown {
+    background: rgb(15, 23, 42) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border: 1px solid rgba(148, 163, 184, 0.2) !important;
+}
+
+.notif-item:hover,
+.dropdown-item:hover {
+    background: rgba(255, 255, 255, 0.05) !important;
+}
+
+body.light .topbar-dropdown {
+    background: #ffffff !important;
+    border-color: #e5e7eb !important;
+}
 }

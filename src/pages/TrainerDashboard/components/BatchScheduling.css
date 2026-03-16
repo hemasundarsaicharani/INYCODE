@@ -44,7 +44,7 @@
 }
 
 .day-name {
-  font-weight: 700;
+  font-weight: 800;
   font-size: 1rem;
 }
 
@@ -97,7 +97,7 @@
 
 .slot-topic {
   font-size: 0.95rem;
-  font-weight: 700;
+  font-weight: 800;
   line-height: 1.4;
 }
 
@@ -130,7 +130,7 @@
 
 .reminder-item h4 {
   font-size: 1.1rem;
-  font-weight: 700;
+  font-weight: 800;
   margin-bottom: 0.5rem;
 }
 

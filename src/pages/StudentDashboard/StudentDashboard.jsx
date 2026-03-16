@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import { useNavigate, NavLink, Outlet } from "react-router-dom";
+import { useNavigate, NavLink, Outlet, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { 
   LayoutDashboard, 
@@ -32,6 +32,8 @@ const NOTIFICATIONS = [
 
 const StudentDashboard = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const mainContentRef = useRef(null);
   const [user, setUser] = useState(() => {
     const saved = localStorage.getItem("loggedUser");
     return saved ? JSON.parse(saved) : null;
@@ -56,6 +58,13 @@ const StudentDashboard = () => {
       setLoading(false);
     }
   }, [navigate, user]);
+
+  // Reset scroll to top on internal page navigation
+  useEffect(() => {
+    if (mainContentRef.current) {
+      mainContentRef.current.scrollTop = 0;
+    }
+  }, [location.pathname]);
 
   // Close dropdowns on outside click
   useEffect(() => {
@@ -129,7 +138,7 @@ const StudentDashboard = () => {
       </motion.aside>
 
       {/* Main Content Area */}
-      <main className="db-main">
+      <main className="db-main" ref={mainContentRef}>
         <header className="db-topbar glass">
           <div className="topbar-left">
             <button className="menu-toggle" onClick={() => setSidebarOpen(!isSidebarOpen)}><Menu size={20} /></button>

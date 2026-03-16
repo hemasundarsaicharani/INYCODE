@@ -4,25 +4,33 @@ import { useNavigate } from "react-router-dom";
 import { ArrowRight, Star, Clock, Users } from "lucide-react";
 import "./Courses.css";
 
+// Course images from assets/course
+import imgReact from "../../assets/course/react.jpg";
+import imgWebDev from "../../assets/course/Web dev.jpg";
+import imgPython from "../../assets/course/Python.jpg";
+import imgJava from "../../assets/course/java.jpg";
+import imgAI from "../../assets/course/AI.jpg";
+import imgDataScience from "../../assets/course/Data  science.jpg";
+
 const CATEGORIES = ["All", "Web Dev", "Python", "Java", "AI & Data"];
 
 const statusColors = {
   "BEST SELLER": { bg: "rgba(249, 115, 22, 0.12)", color: "#f97316" },
-  "TRENDING": { bg: "rgba(16, 185, 129, 0.12)", color: "#10b981" },
-  "POPULAR": { bg: "rgba(99, 102, 241, 0.12)", color: "#6366f1" },
-  "HOT": { bg: "rgba(220, 38, 38, 0.12)", color: "#dc2626" },
-  "NEW": { bg: "rgba(14, 165, 233, 0.12)", color: "#0ea5e9" },
-  "ADVANCED": { bg: "rgba(139, 92, 246, 0.12)", color: "#8b5cf6" },
-  "ENTERPRISE": { bg: "rgba(221, 0, 49, 0.12)", color: "#dd0031" },
-  "MODERN": { bg: "rgba(14, 165, 233, 0.12)", color: "#0ea5e9" },
-  "MOBILE": { bg: "rgba(2, 86, 155, 0.12)", color: "#02569b" },
-  "FUTURE": { bg: "rgba(245, 158, 11, 0.12)", color: "#f59e0b" },
-  "SUCCESS": { bg: "rgba(244, 63, 94, 0.12)", color: "#f43f5e" }
+  "TRENDING":    { bg: "rgba(16, 185, 129, 0.12)", color: "#10b981" },
+  "POPULAR":     { bg: "rgba(99, 102, 241, 0.12)", color: "#6366f1" },
+  "HOT":         { bg: "rgba(220, 38, 38, 0.12)",  color: "#dc2626" },
+  "NEW":         { bg: "rgba(14, 165, 233, 0.12)", color: "#0ea5e9" },
+  "ADVANCED":    { bg: "rgba(139, 92, 246, 0.12)", color: "#8b5cf6" },
+  "ENTERPRISE":  { bg: "rgba(221, 0, 49, 0.12)",   color: "#dd0031" },
+  "MODERN":      { bg: "rgba(14, 165, 233, 0.12)", color: "#0ea5e9" },
+  "MOBILE":      { bg: "rgba(2, 86, 155, 0.12)",   color: "#02569b" },
+  "FUTURE":      { bg: "rgba(245, 158, 11, 0.12)", color: "#f59e0b" },
+  "SUCCESS":     { bg: "rgba(244, 63, 94, 0.12)",  color: "#f43f5e" },
 };
 
 const courses = [
   {
-    emoji: "⚛️",
+    image: imgReact,
     title: "React JS Full Stack Development",
     category: "Web Dev",
     badge: "BEST SELLER",
@@ -33,7 +41,7 @@ const courses = [
     level: "Beginner",
   },
   {
-    emoji: "🐍",
+    image: imgPython,
     title: "Python Programming Masterclass",
     category: "Python",
     badge: "TRENDING",
@@ -44,7 +52,7 @@ const courses = [
     level: "All Levels",
   },
   {
-    emoji: "☕",
+    image: imgJava,
     title: "Java Full Stack Development",
     category: "Java",
     badge: "POPULAR",
@@ -55,7 +63,7 @@ const courses = [
     level: "Intermediate",
   },
   {
-    emoji: "🤖",
+    image: imgDataScience,
     title: "Data Science & AI",
     category: "AI & Data",
     badge: "HOT",
@@ -66,7 +74,7 @@ const courses = [
     level: "Intermediate",
   },
   {
-    emoji: "🌐",
+    image: imgWebDev,
     title: "MERN Stack Development",
     category: "Web Dev",
     badge: "NEW",
@@ -77,7 +85,7 @@ const courses = [
     level: "Beginner",
   },
   {
-    emoji: "🧠",
+    image: imgAI,
     title: "Machine Learning & Deep Learning",
     category: "AI & Data",
     badge: "ADVANCED",
@@ -88,7 +96,7 @@ const courses = [
     level: "Advanced",
   },
   {
-    emoji: "🅰️",
+    image: imgWebDev,
     title: "Angular Enterprise Pro",
     category: "Web Dev",
     badge: "ENTERPRISE",
@@ -99,7 +107,7 @@ const courses = [
     level: "Intermediate",
   },
   {
-    emoji: "🚀",
+    image: imgWebDev,
     title: "Next.js 14 Development",
     category: "Web Dev",
     badge: "MODERN",
@@ -110,7 +118,7 @@ const courses = [
     level: "Advanced",
   },
   {
-    emoji: "💙",
+    image: imgWebDev,
     title: "Flutter Mobile Mastery",
     category: "Web Dev",
     badge: "MOBILE",
@@ -121,7 +129,7 @@ const courses = [
     level: "Beginner",
   },
   {
-    emoji: "🤖",
+    image: imgAI,
     title: "Agentic AI Systems",
     category: "AI & Data",
     badge: "FUTURE",
@@ -132,7 +140,7 @@ const courses = [
     level: "Advanced",
   },
   {
-    emoji: "🎨",
+    image: imgAI,
     title: "Generative AI Creative",
     category: "AI & Data",
     badge: "NEW",
@@ -143,7 +151,7 @@ const courses = [
     level: "Intermediate",
   },
   {
-    emoji: "👔",
+    image: imgDataScience,
     title: "Interview Prep Bootcamp",
     category: "AI & Data",
     badge: "SUCCESS",
@@ -229,11 +237,9 @@ const Courses = () => {
                         variants={cardVariant}
                         whileHover={{ y: -8 }}
                     >
-                        {/* Banner Area */}
-                        <div className="course-banner-modern" style={{ background: `${course.color}12` }}>
-                            <div className="emoji-bubble" style={{ color: course.color, background: `${course.color}20` }}>
-                                {course.emoji}
-                            </div>
+                        {/* Image Banner — Trainer Card Style */}
+                        <div className="course-img-banner">
+                            <img src={course.image} alt={course.title} />
                             <span className="course-category-tag">{course.category}</span>
                         </div>
 

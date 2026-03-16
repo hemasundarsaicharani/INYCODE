@@ -4,8 +4,17 @@
 .logo-text {
     font-family: 'Revue', sans-serif;
     font-size: 1.5rem;
-    font-weight: 800;
+    font-weight: 900;
     letter-spacing: 0.1em;
+}
+
+.db-page-header h1 {
+    font-weight: 800;
+}
+
+.section-header h2,
+.section-header h3 {
+    font-weight: 800;
 }
 .mini-btn {
     height: 40px !important;
@@ -88,8 +97,21 @@ body.light .icon-btn-mini {
 
 .e-center .val {
     font-size: 1.25rem;
-    font-weight: 800;
+    font-weight: 900;
     color: #f59e0b;
+}
+
+.course-card-top h3 {
+    font-weight: 800;
+    font-size: 1rem;
+}
+
+.stat-label {
+    font-weight: 700;
+}
+
+.stat-value {
+    font-weight: 800;
 }
 
 .e-desc {

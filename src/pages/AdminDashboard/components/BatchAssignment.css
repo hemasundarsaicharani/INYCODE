@@ -49,7 +49,7 @@
 
 .course-name {
   font-size: 1.25rem;
-  font-weight: 700;
+  font-weight: 800;
   line-height: 1.4;
   height: 3.5rem;
   display: -webkit-box;
@@ -78,7 +78,7 @@
 
 .detail-item .val {
   font-size: 0.95rem;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 .val.unassigned {
@@ -115,7 +115,7 @@
 
 .trainer-availability h3 {
   font-size: 1.25rem;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 .search-box-mini {
@@ -167,7 +167,7 @@
 
 .t-name {
   font-size: 0.9rem;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 .t-status.active {

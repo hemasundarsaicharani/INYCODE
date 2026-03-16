@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { CheckCircle, ShieldCheck, Zap, ArrowRight, BookOpen } from "lucide-react";
 import "./Enrollment.css";
-import enrollImg from "../../assets/enrol.jpg";
+import enrollImg from "../../assets/enrol.png";
 
 const Enrollment = () => {
     const benefits = [
@@ -21,7 +21,7 @@ const Enrollment = () => {
             </div>
 
             <div className="container-custom">
-                <motion.div 
+                <motion.div
                     className="enrollment-header"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -32,7 +32,7 @@ const Enrollment = () => {
                 </motion.div>
 
                 <div className="enrollment-wrap">
-                    <motion.div 
+                    <motion.div
                         className="enrollment-visual"
                         initial={{ opacity: 0, scale: 0.95 }}
                         whileInView={{ opacity: 1, scale: 1 }}
@@ -41,6 +41,24 @@ const Enrollment = () => {
                     >
                         <div className="enroll-img-inner gradient-border">
                             <img src={enrollImg} alt="Enrollment" />
+                            
+                            <motion.div 
+                                className="floating-badge badge-top glass"
+                                animate={{ y: [0, -10, 0] }}
+                                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                            >
+                                <div className="badge-icon bg-emerald-500/20 text-emerald-500"><Zap size={14} /></div>
+                                <span>Live Mentorship</span>
+                            </motion.div>
+
+                            <motion.div 
+                                className="floating-badge badge-bottom glass"
+                                animate={{ y: [0, 10, 0] }}
+                                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+                            >
+                                <div className="badge-icon bg-blue-500/20 text-blue-400"><BookOpen size={14} /></div>
+                                <span>12+ Industry Projects</span>
+                            </motion.div>
                         </div>
                         <div className="enroll-glow" />
                     </motion.div>
@@ -53,7 +71,7 @@ const Enrollment = () => {
 
                         <div className="benefits-list">
                             {benefits.map((b, i) => (
-                                <motion.div 
+                                <motion.div
                                     key={b}
                                     className="benefit-item"
                                     initial={{ opacity: 0, x: 20 }}
@@ -77,7 +95,7 @@ const Enrollment = () => {
                                 View Brochure
                             </button>
                         </div>
-                        
+
                         <div className="security-tag">
                             <ShieldCheck size={14} />
                             <span>100% Secure & Verified Process</span>

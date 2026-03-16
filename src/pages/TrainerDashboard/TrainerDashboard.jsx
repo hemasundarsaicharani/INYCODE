@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import { useNavigate, NavLink, Outlet } from "react-router-dom";
+import { useNavigate, NavLink, Outlet, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { 
   BarChart3, 
@@ -33,6 +33,8 @@ const TRAINER_NOTIFICATIONS = [
 
 const TrainerDashboard = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const mainContentRef = useRef(null);
   const [user, setUser] = useState(() => {
     const saved = localStorage.getItem("loggedUser");
     return saved ? JSON.parse(saved) : null;
@@ -57,6 +59,13 @@ const TrainerDashboard = () => {
       setLoading(false);
     }
   }, [navigate, user]);
+
+  // Reset scroll to top on internal page navigation
+  useEffect(() => {
+    if (mainContentRef.current) {
+      mainContentRef.current.scrollTop = 0;
+    }
+  }, [location.pathname]);
 
   useEffect(() => {
     const handler = (e) => {
@@ -158,7 +167,7 @@ const TrainerDashboard = () => {
       </motion.aside>
 
       {/* Main Content */}
-      <main className="db-main">
+      <main className="db-main" ref={mainContentRef}>
         <header className="db-topbar glass">
             <div className="topbar-left">
                 <button className="menu-toggle" onClick={() => setSidebarOpen(!isSidebarOpen)}>

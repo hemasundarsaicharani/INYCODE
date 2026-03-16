@@ -1,35 +1,45 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Search, Filter, BookOpen, Star, Clock, Users, ArrowRight } from "lucide-react";
+import { Search, Filter, Star, Clock, Users, ArrowRight } from "lucide-react";
 import "./Courses.css";
+
+// Course images from assets/course
+import imgReact from "../../assets/course/react.jpg";
+import imgWebDev from "../../assets/course/Web dev.jpg";
+import imgPython from "../../assets/course/Python.jpg";
+import imgJava from "../../assets/course/java.jpg";
+import imgAI from "../../assets/course/AI.jpg";
+import imgDataScience from "../../assets/course/Data  science.jpg";
+import imgCloud from "../../assets/course/cloud.jpg";
+import imgUIUX from "../../assets/course/UI & UX.jpg";
 
 const CATEGORIES = ["All", "Web Dev", "Python", "Java", "AI & Data", "Cybersecurity", "Cloud"];
 
 const statusColors = {
   "BEST SELLER": { bg: "rgba(249, 115, 22, 0.12)", color: "#f97316" },
-  "TRENDING": { bg: "rgba(16, 185, 129, 0.12)", color: "#10b981" },
-  "POPULAR": { bg: "rgba(99, 102, 241, 0.12)", color: "#6366f1" },
-  "HOT": { bg: "rgba(220, 38, 38, 0.12)", color: "#dc2626" },
-  "NEW": { bg: "rgba(14, 165, 233, 0.12)", color: "#0ea5e9" },
-  "ADVANCED": { bg: "rgba(139, 92, 246, 0.12)", color: "#8b5cf6" },
-  "PRO": { bg: "rgba(13, 148, 136, 0.12)", color: "#0d9488" },
-  "OFFICIAL": { bg: "rgba(251, 191, 36, 0.12)", color: "#fbbf24" },
-  "ENTERPRISE": { bg: "rgba(221, 0, 49, 0.12)", color: "#dd0031" },
-  "MODERN": { bg: "rgba(14, 165, 233, 0.12)", color: "#0ea5e9" },
-  "MOBILE": { bg: "rgba(2, 86, 155, 0.12)", color: "#02569b" },
-  "COMPLETE": { bg: "rgba(55, 118, 171, 0.12)", color: "#3776ab" },
-  "FOUNDATION": { bg: "rgba(79, 70, 229, 0.12)", color: "#4f46e5" },
-  "PLACEMENT": { bg: "rgba(248, 152, 29, 0.12)", color: "#f8981d" },
-  "ESSENTIAL": { bg: "rgba(99, 102, 241, 0.12)", color: "#6366f1" },
-  "FUTURE": { bg: "rgba(245, 158, 11, 0.12)", color: "#f59e0b" },
-  "CREATIVE": { bg: "rgba(139, 92, 246, 0.12)", color: "#8b5cf6" },
-  "EFFICIENT": { bg: "rgba(16, 185, 129, 0.12)", color: "#10b981" },
-  "SUCCESS": { bg: "rgba(244, 63, 94, 0.12)", color: "#f43f5e" }
+  "TRENDING":    { bg: "rgba(16, 185, 129, 0.12)", color: "#10b981" },
+  "POPULAR":     { bg: "rgba(99, 102, 241, 0.12)", color: "#6366f1" },
+  "HOT":         { bg: "rgba(220, 38, 38, 0.12)",  color: "#dc2626" },
+  "NEW":         { bg: "rgba(14, 165, 233, 0.12)", color: "#0ea5e9" },
+  "ADVANCED":    { bg: "rgba(139, 92, 246, 0.12)", color: "#8b5cf6" },
+  "PRO":         { bg: "rgba(13, 148, 136, 0.12)", color: "#0d9488" },
+  "OFFICIAL":    { bg: "rgba(251, 191, 36, 0.12)", color: "#fbbf24" },
+  "ENTERPRISE":  { bg: "rgba(221, 0, 49, 0.12)",   color: "#dd0031" },
+  "MODERN":      { bg: "rgba(14, 165, 233, 0.12)", color: "#0ea5e9" },
+  "MOBILE":      { bg: "rgba(2, 86, 155, 0.12)",   color: "#02569b" },
+  "COMPLETE":    { bg: "rgba(55, 118, 171, 0.12)", color: "#3776ab" },
+  "FOUNDATION":  { bg: "rgba(79, 70, 229, 0.12)",  color: "#4f46e5" },
+  "PLACEMENT":   { bg: "rgba(248, 152, 29, 0.12)", color: "#f8981d" },
+  "ESSENTIAL":   { bg: "rgba(99, 102, 241, 0.12)", color: "#6366f1" },
+  "FUTURE":      { bg: "rgba(245, 158, 11, 0.12)", color: "#f59e0b" },
+  "CREATIVE":    { bg: "rgba(139, 92, 246, 0.12)", color: "#8b5cf6" },
+  "EFFICIENT":   { bg: "rgba(16, 185, 129, 0.12)", color: "#10b981" },
+  "SUCCESS":     { bg: "rgba(244, 63, 94, 0.12)",  color: "#f43f5e" },
 };
 
 const ALL_COURSES = [
   {
-    emoji: "⚛️",
+    image: imgReact,
     title: "React JS Full Stack Development",
     category: "Web Dev",
     badge: "BEST SELLER",
@@ -41,7 +51,7 @@ const ALL_COURSES = [
     price: "₹14,999"
   },
   {
-    emoji: "🐍",
+    image: imgPython,
     title: "Python Programming Masterclass",
     category: "Python",
     badge: "TRENDING",
@@ -53,7 +63,7 @@ const ALL_COURSES = [
     price: "₹9,999"
   },
   {
-    emoji: "☕",
+    image: imgJava,
     title: "Java Full Stack Development",
     category: "Java",
     badge: "POPULAR",
@@ -65,7 +75,7 @@ const ALL_COURSES = [
     price: "₹12,499"
   },
   {
-    emoji: "🤖",
+    image: imgDataScience,
     title: "Data Science & AI",
     category: "AI & Data",
     badge: "HOT",
@@ -77,7 +87,7 @@ const ALL_COURSES = [
     price: "₹19,999"
   },
   {
-    emoji: "🌐",
+    image: imgWebDev,
     title: "MERN Stack Development",
     category: "Web Dev",
     badge: "NEW",
@@ -89,7 +99,7 @@ const ALL_COURSES = [
     price: "₹15,499"
   },
   {
-    emoji: "🧠",
+    image: imgAI,
     title: "Machine Learning Deep Dive",
     category: "AI & Data",
     badge: "ADVANCED",
@@ -101,7 +111,7 @@ const ALL_COURSES = [
     price: "₹18,999"
   },
   {
-    emoji: "🔐",
+    image: imgUIUX,
     title: "Ethical Hacking & Cyber Security",
     category: "Cybersecurity",
     badge: "PRO",
@@ -113,7 +123,7 @@ const ALL_COURSES = [
     price: "₹13,999"
   },
   {
-    emoji: "☁️",
+    image: imgCloud,
     title: "AWS Cloud Practitioner",
     category: "Cloud",
     badge: "OFFICIAL",
@@ -125,7 +135,7 @@ const ALL_COURSES = [
     price: "₹11,999"
   },
   {
-    emoji: "🅰️",
+    image: imgWebDev,
     title: "Angular Enterprise Development",
     category: "Web Dev",
     badge: "ENTERPRISE",
@@ -137,7 +147,7 @@ const ALL_COURSES = [
     price: "₹12,999"
   },
   {
-    emoji: "🚀",
+    image: imgWebDev,
     title: "Next.js 14 Masterclass",
     category: "Web Dev",
     badge: "MODERN",
@@ -149,7 +159,7 @@ const ALL_COURSES = [
     price: "₹14,999"
   },
   {
-    emoji: "💙",
+    image: imgWebDev,
     title: "Flutter Mobile Apps",
     category: "Web Dev",
     badge: "MOBILE",
@@ -161,7 +171,7 @@ const ALL_COURSES = [
     price: "₹11,999"
   },
   {
-    emoji: "🐍",
+    image: imgPython,
     title: "Full Stack Python Pro",
     category: "Python",
     badge: "COMPLETE",
@@ -173,7 +183,7 @@ const ALL_COURSES = [
     price: "₹15,999"
   },
   {
-    emoji: "📈",
+    image: imgPython,
     title: "DSA with Python",
     category: "Python",
     badge: "FOUNDATION",
@@ -185,7 +195,7 @@ const ALL_COURSES = [
     price: "₹8,999"
   },
   {
-    emoji: "☕",
+    image: imgJava,
     title: "Java DSA Implementation",
     category: "Java",
     badge: "PLACEMENT",
@@ -197,7 +207,7 @@ const ALL_COURSES = [
     price: "₹9,499"
   },
   {
-    emoji: "🏗️",
+    image: imgJava,
     title: "Advanced Data Structures",
     category: "Java",
     badge: "ESSENTIAL",
@@ -209,7 +219,7 @@ const ALL_COURSES = [
     price: "₹7,999"
   },
   {
-    emoji: "🤖",
+    image: imgAI,
     title: "Agentic AI Systems",
     category: "AI & Data",
     badge: "FUTURE",
@@ -221,7 +231,7 @@ const ALL_COURSES = [
     price: "₹21,999"
   },
   {
-    emoji: "🎨",
+    image: imgAI,
     title: "Generative AI Mastery",
     category: "AI & Data",
     badge: "CREATIVE",
@@ -233,7 +243,7 @@ const ALL_COURSES = [
     price: "₹19,999"
   },
   {
-    emoji: "⚙️",
+    image: imgAI,
     title: "AI Business Automations",
     category: "AI & Data",
     badge: "EFFICIENT",
@@ -245,7 +255,7 @@ const ALL_COURSES = [
     price: "₹12,499"
   },
   {
-    emoji: "👔",
+    image: imgDataScience,
     title: "Interview Prep Bootcamp",
     category: "AI & Data",
     badge: "SUCCESS",
@@ -339,11 +349,9 @@ const CoursesPage = () => {
                                     transition={{ duration: 0.5, delay: i * 0.05 }}
                                     whileHover={{ y: -10 }}
                                 >
-                                    {/* Banner Area */}
-                                    <div className="card-top-banner" style={{ background: `${course.color}12` }}>
-                                        <div className="emoji-bubble" style={{ color: course.color, background: `${course.color}20` }}>
-                                            {course.emoji}
-                                        </div>
+                                    {/* Image Banner */}
+                                    <div className="card-img-banner">
+                                        <img src={course.image} alt={course.title} />
                                         <span className="card-category-tag">{course.category}</span>
                                     </div>
 
