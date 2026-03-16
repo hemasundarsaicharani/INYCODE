@@ -153,10 +153,6 @@ const TrainerDashboard = () => {
                     <span className="nav-icon"><FileCheck size={20} /></span>
                     <span className="nav-text">Assignments</span>
                 </NavLink>
-                <NavLink to="/trainer-dashboard/projects" className={({ isActive }) => cn("nav-link", isActive && "active")}>
-                    <span className="nav-icon"><BookMarked size={20} /></span>
-                    <span className="nav-text">Projects</span>
-                </NavLink>
                 <NavLink to="/trainer-dashboard/schedule" className={({ isActive }) => cn("nav-link", isActive && "active")}>
                     <span className="nav-icon"><Clock size={20} /></span>
                     <span className="nav-text">Schedule</span>
@@ -245,7 +241,7 @@ const TrainerDashboard = () => {
                           </div>
                         </div>
                         <div className="dropdown-divider" />
-                        <button className="dropdown-item" onClick={() => setProfileOpen(false)}><User size={16} /> Profile</button>
+                        <button className="dropdown-item" onClick={() => { setProfileOpen(false); navigate("/trainer-dashboard/profile"); }}><User size={16} /> Profile</button>
                         <div className="dropdown-divider" />
                         <button className="dropdown-item danger" onClick={handleLogout}><LogOut size={16} /> Logout</button>
                       </motion.div>
