@@ -45,76 +45,82 @@ function ResetPassword() {
 
         <div className="auth-card-wrap">
           <motion.div 
-            className="auth-card card glass gradient-border"
+            className="auth-card reset-password-card card glass gradient-border"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="auth-card-header">
-                <div className="auth-icon-circ">
-                    <KeyRound size={32} color="#38bdf8" />
+            <div className="auth-card-content">
+                <div className="auth-card-header">
+                    <div className="auth-icon-circ">
+                        <KeyRound size={32} color="#38bdf8" />
+                    </div>
+                    <h2>Reset <span className="gradient-text">Password</span></h2>
+                    <p>Enter your new password to regain access.</p>
                 </div>
-                <h2>Reset <span className="gradient-text">Password</span></h2>
-                <p>Enter your new password to regain access.</p>
-            </div>
 
-            <form onSubmit={handleReset} className="auth-form">
-              <div className="auth-input-group">
-                <label>New Password</label>
-                <div className="input-with-icon">
-                    <Lock className="input-icon" size={18} />
-                    <input
-                      type={showNewPassword ? "text" : "password"}
-                      placeholder="••••••••"
-                      value={newPassword}
-                      onChange={(e) => setNewPassword(e.target.value)}
-                      required
-                    />
-                    <button 
-                        type="button" 
-                        className="eye-btn" 
-                        onClick={() => setShowNewPassword(!showNewPassword)}
-                    >
-                        {showNewPassword ? <EyeOff size={18} /> : <Eye size={18} />}
-                    </button>
-                </div>
-              </div>
+                <form onSubmit={handleReset} className="auth-form">
+                  <div className="auth-input-group">
+                    <div className="label-flex">
+                        <label>New Password</label>
+                    </div>
+                    <div className="input-with-icon">
+                        <Lock className="input-icon" size={18} />
+                        <input
+                          type={showNewPassword ? "text" : "password"}
+                          placeholder="••••••••"
+                          value={newPassword}
+                          onChange={(e) => setNewPassword(e.target.value)}
+                          required
+                        />
+                        <button 
+                            type="button" 
+                            className="eye-btn" 
+                            onClick={() => setShowNewPassword(!showNewPassword)}
+                        >
+                            {showNewPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+                        </button>
+                    </div>
+                  </div>
 
-              <div className="auth-input-group">
-                <label>Confirm New Password</label>
-                <div className="input-with-icon">
-                    <Lock className="input-icon" size={18} />
-                    <input
-                      type={showConfirmPassword ? "text" : "password"}
-                      placeholder="••••••••"
-                      value={confirmPassword}
-                      onChange={(e) => setConfirmPassword(e.target.value)}
-                      required
-                    />
-                    <button 
-                        type="button" 
-                        className="eye-btn" 
-                        onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-                    >
-                        {showConfirmPassword ? <EyeOff size={18} /> : <Eye size={18} />}
-                    </button>
-                </div>
-              </div>
+                  <div className="auth-input-group">
+                    <div className="label-flex">
+                        <label>Confirm New Password</label>
+                    </div>
+                    <div className="input-with-icon">
+                        <Lock className="input-icon" size={18} />
+                        <input
+                          type={showConfirmPassword ? "text" : "password"}
+                          placeholder="••••••••"
+                          value={confirmPassword}
+                          onChange={(e) => setConfirmPassword(e.target.value)}
+                          required
+                        />
+                        <button 
+                            type="button" 
+                            className="eye-btn" 
+                            onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                        >
+                            {showConfirmPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+                        </button>
+                    </div>
+                  </div>
 
-              <button type="submit" className="btn-primary auth-submit-btn" disabled={isLoading}>
-                {isLoading ? <span className="loader-mini"></span> : (
-                    <>
-                        <span>Reset Password</span>
-                        <ChevronRight size={18} />
-                    </>
-                )}
-              </button>
-            </form>
+                  <button type="submit" className="btn-primary auth-submit-btn" disabled={isLoading}>
+                    {isLoading ? <span className="loader-mini"></span> : (
+                        <>
+                            <span>Reset Password</span>
+                            <ChevronRight size={18} />
+                        </>
+                    )}
+                  </button>
+                </form>
 
-            <div className="auth-card-footer">
-                <div className="auth-trust">
-                    <ShieldCheck size={14} />
-                    <span>Your security is our priority</span>
+                <div className="auth-card-footer">
+                    <div className="auth-trust">
+                        <ShieldCheck size={14} />
+                        <span>Your security is our priority</span>
+                    </div>
                 </div>
             </div>
           </motion.div>
