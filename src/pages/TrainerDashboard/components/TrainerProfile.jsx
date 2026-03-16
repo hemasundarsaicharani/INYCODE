@@ -150,7 +150,7 @@ const TrainerProfile = ({ user }) => {
                 <div className="overview-grid">
                   <div className="overview-main">
                     <div className="content-card glass">
-                      <h3 className="section-title">Professional Bio</h3>
+                      <h3 className="profile-section-title">Professional Bio</h3>
                       {isEditing ? (
                         <textarea 
                           className="bio-editor"
@@ -179,7 +179,7 @@ const TrainerProfile = ({ user }) => {
 
                   <div className="overview-sidebar">
                     <div className="content-card glass">
-                      <h3 className="section-title">Achievements</h3>
+                      <h3 className="profile-section-title">Achievements</h3>
                       <div className="achievement-list">
                         {achievements.map((item, i) => (
                           <div key={i} className="achieve-row">
@@ -193,7 +193,7 @@ const TrainerProfile = ({ user }) => {
                     </div>
 
                     <div className="content-card glass">
-                      <h3 className="section-title">Featured Skills</h3>
+                      <h3 className="profile-section-title">Featured Skills</h3>
                       <div className="skills-flex">
                         {['React', 'Node.js', 'TypeScript', 'GraphQL', 'Docker', 'AWS', 'Next.js'].map(skill => (
                           <span key={skill} className="skill-badge">{skill}</span>
@@ -206,7 +206,7 @@ const TrainerProfile = ({ user }) => {
 
               {activeTab === "experience" && (
                 <div className="content-card glass full-width">
-                  <h3 className="section-title">Work & Teaching Experience</h3>
+                  <h3 className="profile-section-title">Work & Teaching Experience</h3>
                   <div className="timeline-container">
                     {experience.map((item, i) => (
                       <div key={i} className="timeline-row">
@@ -231,7 +231,7 @@ const TrainerProfile = ({ user }) => {
               {activeTab === "statistics" && (
                 <div className="content-card glass full-width text-center">
                   <div className="stats-header-flex">
-                    <h3 className="section-title" style={{ marginBottom: 0 }}>Student Growth</h3>
+                    <h3 className="profile-section-title" style={{ marginBottom: 0 }}>Student Growth</h3>
                     <span className="stats-period">Jan - Jul 2026</span>
                   </div>
                   <div className="analytics-placeholder">
@@ -270,7 +270,7 @@ const TrainerProfile = ({ user }) => {
 
               {activeTab === "reviews" && (
                 <div className="content-card glass full-width">
-                  <h3 className="section-title">Student Testimonials</h3>
+                  <h3 className="profile-section-title">Student Testimonials</h3>
                   <div className="reviews-grid">
                     {[
                       { name: "Rahul S.", rating: 5, text: "Excellent teaching style! The complex concepts were explained very simply. Highly recommended for React beginners and advanced alike." },
