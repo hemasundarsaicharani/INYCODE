@@ -8,7 +8,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.5rem 2rem;
+  padding: 0.1rem 2rem;
   background: rgb(2, 6, 23);
   transition: background 0.4s ease, box-shadow 0.4s ease, padding 0.3s ease;
 }
@@ -21,7 +21,7 @@ body.light .navbar {
   background: rgb(2, 6, 23);
   border-bottom: 1px solid rgba(56, 189, 248, 0.12);
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
-  padding: 1rem 2rem;
+  padding: 0.5rem 2rem;
 }
 
 body.light .navbar-scrolled {
@@ -41,8 +41,8 @@ body.light .navbar-scrolled {
 }
 
 .brand-logo-wrap {
-  width: 82px;
-  height: 82px;
+  width: 70px;
+  height: 70px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -65,7 +65,7 @@ body.light .navbar-scrolled {
 
 .brand-title {
   font-family: 'Revue', sans-serif;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: 800;
   color: #e2e8f0;
   letter-spacing: 0.05em;
@@ -81,7 +81,7 @@ body.light .navbar-scrolled {
 
 .brand-tagline {
   font-family: 'Copperplate Gothic Bold', 'Copperplate', serif;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   font-weight: 600;
   color: #94a3b8;
   letter-spacing: 0.1em;
