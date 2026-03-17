@@ -37,17 +37,34 @@ function TrainerRegister() {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleRegister = (e) => {
+  const handleRegister = async (e) => {
     e.preventDefault();
     if (!validateForm()) return;
     setIsLoading(true);
+    setErrors({});
 
-    // Simulated demo registration
-    setTimeout(() => {
+    try {
+      const response = await fetch("http://localhost:5000/api/trainers/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ username, fullname, email, password }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
         alert("Trainer application submitted successfully! Welcome to the faculty.");
-        setIsLoading(false);
         navigate("/trainer-login");
-    }, 1500);
+      } else {
+        setErrors({ general: data.message || "Registration failed" });
+      }
+    } catch (error) {
+      setErrors({ general: "Unable to connect to server" });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const handleReset = () => {
@@ -108,6 +125,12 @@ function TrainerRegister() {
                     <h2>Trainer <span className="gradient-text">Application</span></h2>
                     <p>Join our elite community of expert mentors.</p>
                 </div>
+
+                {errors.general && (
+                  <div className="error-banner mb-4 p-3 glass" style={{ color: '#ef4444', borderRadius: '8px', textAlign: 'center', background: 'rgba(239, 68, 68, 0.1)' }}>
+                    {errors.general}
+                   </div>
+                )}
 
                 <form onSubmit={handleRegister} className="auth-form">
                   <div className="form-grid-2">
