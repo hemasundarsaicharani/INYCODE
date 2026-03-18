@@ -185,13 +185,27 @@ const Courses = () => {
 
         {/* Header */}
         <div className="courses-header">
-          <div>
-            <div className="section-badge">📚 &nbsp;Our Courses</div>
-            <h2 className="section-title">Popular <span className="gradient-text">Courses</span></h2>
-            <p className="section-subtitle">
-              Expertly crafted programs to take you from beginner to job-ready professional.
-            </p>
+          <div className="section-badge">📚 &nbsp;Our Courses</div>
+          <h2 className="section-title">Popular <span className="gradient-text">Courses</span></h2>
+          <p className="section-subtitle">
+            Expertly crafted programs to take you from beginner to job-ready professional.
+          </p>
+        </div>
+
+        {/* Filter & View All Row */}
+        <div className="courses-controls">
+          <div className="courses-filter">
+            {CATEGORIES.map(cat => (
+              <button
+                key={cat}
+                className={`filter-btn ${active === cat ? "filter-active" : ""}`}
+                onClick={() => setActive(cat)}
+              >
+                {cat}
+              </button>
+            ))}
           </div>
+          
           <button
             className="btn-primary courses-view-all"
             onClick={() => { navigate("/courses"); window.scrollTo(0, 0); }}
@@ -199,19 +213,6 @@ const Courses = () => {
             <span>View All Courses</span>
             <ArrowRight size={16} />
           </button>
-        </div>
-
-        {/* Category Filter */}
-        <div className="courses-filter">
-          {CATEGORIES.map(cat => (
-            <button
-              key={cat}
-              className={`filter-btn ${active === cat ? "filter-active" : ""}`}
-              onClick={() => setActive(cat)}
-            >
-              {cat}
-            </button>
-          ))}
         </div>
 
         {/* Grid */}

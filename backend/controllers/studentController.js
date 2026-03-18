@@ -11,16 +11,13 @@ exports.registerStudent = async (req, res) => {
             return res.status(400).json({ message: "All fields are required" });
         }
 
-        const snapshot = await db.ref("students").once("value");
-        const students = snapshot.val();
+        const snapshot = await db.ref("students")
+            .orderByChild("email")
+            .equalTo(email)
+            .once("value");
 
-        if (students) {
-            const exists = Object.values(students).find(
-                user => user.email === email
-            );
-            if (exists) {
-                return res.status(400).json({ message: "Email already registered" });
-            }
+        if (snapshot.exists()) {
+            return res.status(400).json({ message: "Email already registered" });
         }
 
         const studentRef = db.ref("students").push();
@@ -54,16 +51,13 @@ exports.registerTrainer = async (req, res) => {
             return res.status(400).json({ message: "All fields are required" });
         }
 
-        const snapshot = await db.ref("trainers").once("value");
-        const trainers = snapshot.val();
+        const snapshot = await db.ref("trainers")
+            .orderByChild("email")
+            .equalTo(email)
+            .once("value");
 
-        if (trainers) {
-            const exists = Object.values(trainers).find(
-                user => user.email === email
-            );
-            if (exists) {
-                return res.status(400).json({ message: "Email already registered" });
-            }
+        if (snapshot.exists()) {
+            return res.status(400).json({ message: "Email already registered" });
         }
 
         const trainerRef = db.ref("trainers").push();
@@ -108,22 +102,19 @@ exports.loginStudent = async (req, res) => {
     try {
         const { email, password } = req.body;
 
-        const snapshot = await db.ref("students").once("value");
-        const students = snapshot.val();
+        const snapshot = await db.ref("students")
+            .orderByChild("email")
+            .equalTo(email)
+            .once("value");
 
-        if (!students) {
-            return res.status(404).json({ message: "No students found" });
-        }
-
-        const userEntry = Object.entries(students).find(
-            ([id, user]) => user.email === email
-        );
-
-        if (!userEntry) {
+        if (!snapshot.exists()) {
             return res.status(404).json({ message: "Student not found" });
         }
 
-        const [id, user] = userEntry;
+        const students = snapshot.val();
+        // Since email is unique, we get the first key
+        const id = Object.keys(students)[0];
+        const user = students[id];
 
         // Plain text comparison
         if (user.password !== password) {
@@ -153,22 +144,18 @@ exports.loginAdmin = async (req, res) => {
     try {
         const { email, password } = req.body;
 
-        const snapshot = await db.ref("admin").once("value");
-        const admins = snapshot.val();
+        const snapshot = await db.ref("admin")
+            .orderByChild("email")
+            .equalTo(email)
+            .once("value");
 
-        if (!admins) {
-            return res.status(404).json({ message: "Admin data not found" });
-        }
-
-        const adminEntry = Object.entries(admins).find(
-            ([id, admin]) => admin.email === email
-        );
-
-        if (!adminEntry) {
+        if (!snapshot.exists()) {
             return res.status(404).json({ message: "Admin not found" });
         }
 
-        const [id, admin] = adminEntry;
+        const admins = snapshot.val();
+        const id = Object.keys(admins)[0];
+        const admin = admins[id];
 
         if (admin.password !== password) {
             return res.status(401).json({ message: "Invalid password" });
@@ -239,22 +226,18 @@ exports.loginTrainer = async (req, res) => {
     try {
         const { email, password } = req.body;
 
-        const snapshot = await db.ref("trainers").once("value");
-        const trainers = snapshot.val();
+        const snapshot = await db.ref("trainers")
+            .orderByChild("email")
+            .equalTo(email)
+            .once("value");
 
-        if (!trainers) {
-            return res.status(404).json({ message: "No trainers found" });
-        }
-
-        const userEntry = Object.entries(trainers).find(
-            ([id, user]) => user.email === email
-        );
-
-        if (!userEntry) {
+        if (!snapshot.exists()) {
             return res.status(404).json({ message: "Trainer not found" });
         }
 
-        const [id, user] = userEntry;
+        const trainers = snapshot.val();
+        const id = Object.keys(trainers)[0];
+        const user = trainers[id];
 
         if (user.password !== password) {
             return res.status(401).json({ message: "Invalid password" });
