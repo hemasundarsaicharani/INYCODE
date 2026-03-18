@@ -5,6 +5,8 @@ import { ShieldAlert, Lock, Eye, EyeOff, ArrowLeft, ChevronRight, ShieldCheck, K
 import { GoogleLogo, GithubLogo } from "../../components/Auth/BrandLogos";
 import "./AdminLogin.css";
 
+import { endpoints } from "../../utils/api";
+
 function AdminLogin() {
   const navigate = useNavigate();
   const [username, setUsername] = useState("");
@@ -33,7 +35,7 @@ function AdminLogin() {
     setErrors({});
 
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL || "http://localhost:5000"}/api/admin/login`, {
+      const response = await fetch(endpoints.admin.login, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

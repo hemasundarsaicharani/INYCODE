@@ -5,6 +5,8 @@ import { GraduationCap, Mail, Lock, Eye, EyeOff, ArrowLeft, ChevronRight, UserPl
 import { GoogleLogo, GithubLogo } from "../../components/Auth/BrandLogos";
 import "./TrainerRegister.css";
 
+import { endpoints } from "../../utils/api";
+
 function TrainerRegister() {
   const navigate = useNavigate();
 
@@ -44,7 +46,7 @@ function TrainerRegister() {
     setErrors({});
 
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL || "http://localhost:5000"}/api/trainers/register`, {
+      const response = await fetch(endpoints.trainers.register, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

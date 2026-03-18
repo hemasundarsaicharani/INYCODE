@@ -5,6 +5,8 @@ import { User, Mail, Lock, Eye, EyeOff, ArrowLeft, ChevronRight, UserPlus, Refre
 import { GoogleLogo, GithubLogo } from "../../components/Auth/BrandLogos";
 import "./StudentRegister.css";
 
+import { endpoints } from "../../utils/api";
+
 function StudentRegister() {
   const navigate = useNavigate();
 
@@ -44,7 +46,7 @@ function StudentRegister() {
     setErrors({});
 
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL || "http://localhost:5000"}/api/students/register`, {
+      const response = await fetch(endpoints.students.register, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
