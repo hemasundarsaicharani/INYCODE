@@ -51,6 +51,22 @@ app.get("/api/test", (req, res) => {
     });
 });
 
+// Dedicated Debug Endpoint (Safe for diagnostics)
+app.get("/api/debug", (req, res) => {
+    const firebaseKeyExists = !!process.env.FIREBASE_KEY;
+    const firebaseKeyLength = process.env.FIREBASE_KEY ? process.env.FIREBASE_KEY.length : 0;
+    
+    res.json({
+        status: "diagnostic",
+        node_version: process.version,
+        env: process.env.NODE_ENV,
+        firebase_key_present: firebaseKeyExists,
+        firebase_key_length: firebaseKeyLength,
+        firebase_apps_initialized: require("firebase-admin").apps.length,
+        timestamp: new Date().toISOString()
+    });
+});
+
 // Root Health Check
 app.get("/", (req, res) => {
     res.json({ 
