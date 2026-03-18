@@ -142,11 +142,11 @@ exports.loginStudent = async (req, res) => {
 ============================ */
 exports.loginAdmin = async (req, res) => {
     try {
-        const { email, password } = req.body;
+        const { username, password } = req.body;
 
         const snapshot = await db.ref("admin")
-            .orderByChild("email")
-            .equalTo(email)
+            .orderByChild("username")
+            .equalTo(username)
             .once("value");
 
         if (!snapshot.exists()) {
