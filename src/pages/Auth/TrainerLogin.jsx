@@ -5,8 +5,6 @@ import { GraduationCap, Lock, Eye, EyeOff, ArrowLeft, ChevronRight, ShieldCheck,
 import { GoogleLogo, GithubLogo } from "../../components/Auth/BrandLogos";
 import "./TrainerLogin.css";
 
-import { endpoints } from "../../utils/api";
-
 function TrainerLogin() {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
@@ -35,7 +33,7 @@ function TrainerLogin() {
     setErrors({});
 
     try {
-      const response = await fetch(endpoints.trainers.login, {
+      const response = await fetch("http://localhost:5000/api/trainers/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

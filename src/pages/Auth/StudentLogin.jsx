@@ -5,8 +5,6 @@ import { User, Lock, Eye, EyeOff, ArrowLeft, ChevronRight, ShieldCheck, Mail } f
 import { GoogleLogo, GithubLogo } from "../../components/Auth/BrandLogos";
 import "./StudentLogin.css";
 
-import { endpoints } from "../../utils/api";
-
 function StudentLogin() {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
@@ -35,12 +33,12 @@ function StudentLogin() {
     setErrors({});
 
     try {
-      const response = await fetch(endpoints.students.login, {
+      const response = await fetch("http://localhost:5000/api/students/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ email, password }), 
+        body: JSON.stringify({ email, password }), // Backend expects email
       });
 
       const data = await response.json();
