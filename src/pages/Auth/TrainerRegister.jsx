@@ -44,7 +44,8 @@ function TrainerRegister() {
     setErrors({});
 
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/trainers/register`, {
+      const apiBase = import.meta.env.VITE_API_BASE_URL || "http://localhost:5000";
+      const response = await fetch(`${apiBase}/api/trainers/register`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
