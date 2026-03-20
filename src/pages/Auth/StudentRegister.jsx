@@ -44,7 +44,7 @@ function StudentRegister() {
     setErrors({});
 
     try {
-      const response = await fetch("http://localhost:5000/api/students/register", {
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/students/register`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
