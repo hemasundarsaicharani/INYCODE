@@ -16,7 +16,7 @@
     text-align: center;
     max-width: 700px;
     margin: 0 auto 3rem;
-    position: relative;
+    position: absolute;
     z-index: 1;
 }
 
@@ -107,7 +107,7 @@ body.light .about-card-title {
 }
 
 body.light .about-card-text {
-  color: #4b5563;
+    color: #4b5563;
 }
 
 @media (max-width: 1024px) {
@@ -115,7 +115,7 @@ body.light .about-card-text {
         flex-direction: column;
         gap: 3rem;
     }
-    
+
     .about-row.row-reverse {
         flex-direction: column;
     }
